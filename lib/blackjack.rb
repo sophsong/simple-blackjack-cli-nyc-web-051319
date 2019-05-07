@@ -31,7 +31,7 @@ end
 
 def initial_round
   # code #initial_round here
-  sum=deal_card+deal_card
+  sum=deal_card + deal_card
   display_card_total(sum)
   return sum
 end
@@ -39,10 +39,10 @@ end
 def hit?(current_total)
   # code hit? here
   prompt_user
-  input=get_user_input
+  input= get_user_input
   if input == "h"
-    current_total+=deal_card
-    elsif input =="s"
+    current_total+= deal_card
+    elsif input == "s"
     return current_total
   end
 end
@@ -57,5 +57,12 @@ end
 
 def runner
   # code runner here
+  welcome
+  hand = initial_round
+  until hand>21 do 
+    hand = hit? (hand)
+    display_card_total (hand)
+end
+end_game(hand)
 end
     
